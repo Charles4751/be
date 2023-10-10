@@ -30,7 +30,9 @@ export class MerchantService {
   }
 
   async create(param: CreateShopDto) {
+    console.log("%c Line:33 🍢 param", "color:#6ec1c2", param);
     const merchant = new this.merchantModel(param);
+    console.log("%c Line:35 🍒 merchant", "color:#e41a6a", merchant);
     const newMerchant = await merchant.save();
     return newMerchant;
   }

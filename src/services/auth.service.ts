@@ -23,7 +23,7 @@ export class AuthService {
     console.log("%c Line:25 🍆 password", "color:#e41a6a", password);
     // 查找用户
     const user = await this.userModel.findOne({ phoneNumber }).exec();
-    this.logger.verbose(user);
+    // this.logger.verbose(user);
 
     if (!user) {
       throw new NotFoundException('用户不存在');
@@ -61,7 +61,7 @@ export class AuthService {
 
       // 保存用户到数据库
       await newUser.save();
-
+      delete newUser.password;
       return newUser;
     } catch (error) {
       if (error.code === 11000 && error.keyPattern.phoneNumber) {

@@ -3,7 +3,7 @@ import { HydratedDocument } from 'mongoose';
 
 export type DishDocument = HydratedDocument<Dish>;
 
-@Schema({ autoIndex: true })
+@Schema({ excludeIndexes: false })
 export class Dish {
   @Prop()
   merchantId: string;

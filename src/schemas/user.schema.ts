@@ -3,7 +3,7 @@ import { HydratedDocument } from 'mongoose';
 
 export type UserDocument = HydratedDocument<User>;
 
-@Schema({ autoIndex: true })
+@Schema({ excludeIndexes: false })
 export class User {
   @Prop()
   username: string;
@@ -14,7 +14,7 @@ export class User {
   @Prop()
   userId: number;
 
-  @Prop({ unique: true })
+  @Prop()
   phoneNumber: number;
 
   @Prop()

@@ -43,13 +43,7 @@ export class DishService {
 
     const dish = new this.dishModel({
       status: 'OFF_SHELF',
-      // ...param,
-      dishName: param.dishName,
-      category: param.category,
-      price: param.price,
-      merchantId: 1,
-      preferential: param.preferential,
-      inventory: param.inventory,
+      ...param,
     });
 
     console.log("%c Line:47 🌶 dish", "color:#b03734", dish);

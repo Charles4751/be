@@ -3,10 +3,10 @@ import { HydratedDocument } from 'mongoose';
 
 export type OrderDocument = HydratedDocument<Order>;
 
-@Schema()
+@Schema({ excludeIndexes: false })
 export class Order {
   @Prop()
-  userId: number;
+  userId: string;
 
   @Prop()
   username: string;
@@ -51,10 +51,10 @@ export class Order {
   incomePrice: number;
 
   @Prop()
-  orderTime: number;
+  orderTime: string;
 
   @Prop()
-  paymentTime: number;
+  paymentTime: string;
 }
 
 export const OrderSchema = SchemaFactory.createForClass(Order);

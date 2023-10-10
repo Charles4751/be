@@ -3,10 +3,10 @@ import { HydratedDocument } from 'mongoose';
 
 export type MerchantDocument = HydratedDocument<Merchant>;
 
-@Schema({ autoIndex: true })
+@Schema({ excludeIndexes: false })
 export class Merchant {
   @Prop()
-  userId: number;
+  userId: string;
 
   @Prop()
   merchantName: string;

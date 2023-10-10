@@ -1,7 +1,7 @@
 import { IsString, IsOptional, IsMobilePhone, IsNumber } from 'class-validator';
 
 export class CreateShopDto {
-  userId: number;
+  userId: string;
 
   @IsOptional()
   merchantId?: number;
@@ -20,7 +20,7 @@ export class CreateShopDto {
 }
 
 export class ShopListDto {
-  userId: number;
+  userId: string;
   limit: number;
   offset: number;
 }
