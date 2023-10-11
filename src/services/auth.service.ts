@@ -20,7 +20,6 @@ export class AuthService {
   private readonly logger = new Logger(AuthService.name);
 
   async login(phoneNumber: number, password: string): Promise<User | null> {
-    console.log("%c Line:25 🍆 password", "color:#e41a6a", password);
     // 查找用户
     const user = await this.userModel.findOne({ phoneNumber }).exec();
     // this.logger.verbose(user);

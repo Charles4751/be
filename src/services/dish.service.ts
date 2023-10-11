@@ -30,25 +30,12 @@ export class DishService {
   }
 
   async add(param: AddDto) {
-    // const modelName = 'Dish';
-    // const counter = await this.counterModel.findOneAndUpdate(
-    //   { modelName },
-    //   { $inc: { nextId: 1 } },
-    //   { upsert: true, new: true },
-    // );
-
-    // const lastDish = await this.dishModel.findOne().sort({ dishId: -1 }).exec();
-    // console.log("%c Line:42 🥑 lastDish", "color:#f5ce50", lastDish);
-    // const lastDishId = lastDish ? lastDish.id : 0;
-
     const dish = new this.dishModel({
       status: 'OFF_SHELF',
       ...param,
     });
 
-    console.log("%c Line:47 🌶 dish", "color:#b03734", dish);
     const newDish = await dish.save();
-    console.log("%c Line:51 🌭 newDish", "color:#465975", newDish);
     return newDish;
   }
 

@@ -35,7 +35,6 @@ export class OrderService {
       { new: true },
     );
 
-    console.log("%c Line:39 🍇 updatedOrder", "color:#6ec1c2", updatedOrder);
     if (!updatedOrder) {
       throw new Error('订单不存在');
     }
