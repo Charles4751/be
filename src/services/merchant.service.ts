@@ -22,6 +22,7 @@ export class MerchantService {
 
     const list = await this.merchantModel
       .find({ userId })
+      .select({ __v: 0 })
       .skip(offset - 1)
       .limit(limit)
       .exec();
